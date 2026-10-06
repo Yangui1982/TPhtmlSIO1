@@ -1,13 +1,20 @@
+:root {
+    --couleur-primaire: #0055a4;
+    --couleur-texte: #222222;
+    --espacement: 16px;
+}
+
+
 *, *::before, *::after {
  box-sizing: border-box;
 }
 
 body {
  font-family: Arial, sans-serif;
- color: #222222;
+ color: var(--couleur-texte)
 }
 h1 {
- color: #0055a4;
+ color:  var(--couleur-primaire);
 }
 nav a {
  color: #0055a4;
@@ -15,8 +22,11 @@ nav a {
 }
 
 .entete-club{
-  background-color: #0055a4;
+  background-color: var(--couleur-primaire);
   color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .entete-club h1{
@@ -29,7 +39,10 @@ nav a {
 }
 
 nav {
+  display: flex;
   padding: 10px;
+  flex-direction: column;
+    gap: 8px
 }
 
 main {
@@ -47,8 +60,8 @@ footer {
 .carte {
  border: 1px solid #dddddd;
  border-radius: 8px;
- padding: 16px;
- margin-bottom: 16px;
+ padding: var(--espacement);
+ margin-bottom: var(--espacement);
 }
 
 table {
@@ -62,12 +75,11 @@ td, th {
 }
 
 thead {
- background-color: #0055a4;
+ background-color: var(--couleur-primaire);
  color: white;
 }
 
 label {
- display: block;
  margin-top: 12px;
  font-weight: bold;
 }
@@ -81,10 +93,40 @@ input, select, textarea {
 }
 
 button {
- margin-top: 16px;
+ margin-top: var(--espacement);
  padding: 10px 20px;
- background-color: #0055a4;
+ background-color: var(--couleur-primaire);;
  color: white;
  border: none;
  border-radius: 4px;
+}
+
+.ligne-formulaire {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 12px;
+}
+
+.grille-effectif {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: var(--espacement);
+    margin-top: 12px;
+}
+
+.carte-joueur {
+    text-align: center;
+    font-weight: bold;
+}
+
+@media (min-width: 768px) {
+    .entete-club {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    nav {
+        flex-direction: row;
+        gap: 20px;
+    }
 }
