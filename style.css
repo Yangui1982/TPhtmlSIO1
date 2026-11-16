@@ -25,8 +25,8 @@ nav a {
   background-color: var(--couleur-primaire);
   color: white;
   display: flex;
+  justify-content: center;
   flex-direction: column;
-  align-items: flex-start;
   background: linear-gradient(135deg, var(--couleur-primaire), #003d75);
 }
 
@@ -169,7 +169,7 @@ textarea:focus-visible {
 
 @media (min-width: 768px) {
     .entete-club {
-        flex-direction: row;
+        flex-direction: column;
         align-items: center;
     }
 

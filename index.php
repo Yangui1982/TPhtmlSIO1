@@ -1,3 +1,8 @@
+<?php
+$club = "Olympique de Marseille";
+$fondation = 1899;
+$age = date('Y') - $fondation;
+?>
 <!DOCTYPE html>
 <html lang="fr">
   <head>
@@ -7,13 +12,13 @@
   </head>
   <body>
     <header class="entete-club">
-      <h1>Olympique de Marseille</h1>
+      <h1><?= $club?></h1>
       <p>Droit au but.</p>
     </header>
     <nav>
       <a href="#histoire">Histoire</a>
       <a href="#effectif">Effectif</a>
-      <a href="evenements.html">Événements</a>
+      <a href="evenements.php">Événements</a>
       <a href="#palmares">Palmarès</a>
       <a href="contact.html">Contact</a>
     </nav>
@@ -21,7 +26,7 @@
       <section id="histoire">
         <h2>Histoire du club</h2>
         <p>
-        Fondé en <strong>1899</strong>, l'Olympique de Marseille est l'un des clubs
+        Fondé en <strong><?= $fondation?></strong>, l'Olympique de Marseille a <?= $age ?> ans, et est l'un des clubs
         historiques du football français. Le club évolue au sein du
         <em>Stade Vélodrome</em>, son stade emblématique depuis 1937.
         </p>
